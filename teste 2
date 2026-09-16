@@ -1,0 +1,28 @@
+============================================================
+FICHA DE ENTREGA DA ATIVIDADE - BANCO DE DADOS & SUPABASE
+============================================================
+Aluno(a): Kalebe de Barros Nunes
+Tema Atribuído: Tema 10 - Hotel Fazenda & Ecoturismo
+Vídeo de Demonstração (YouTube): https://youtu.be/KyPPR57so64
+============================================================
+
+-- [Missão 1: Projeção & Aliases]
+Select hospede,tipo_acomodacao  from hospedagens_reservas;
+
+-- [Missão 2: Transformação Aritmética]
+Select 
+ hospede, 
+  diarias AS "Diaria Atual",
+ (diarias*valor_diaria) AS "Custo total das Diarias"
+  From hospedagens_reservas;
+
+-- [Missão 3: Filtro com WHERE e Lógica]
+Select pensao_completa,diarias
+ From hospedagens_reservas
+ Where pensao_completa = 'true' AND diarias < 4;
+
+-- [Missão 4: Lapidação (ORDER BY e LIMIT)]
+Select tipo_acomodacao,valor_diaria,diarias
+ From hospedagens_reservas
+ Order By valor_diaria desc
+ limit 3;
