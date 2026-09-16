@@ -1,0 +1,39 @@
+-- -- --Tabela de Reservas de Hospedagem
+-- -- CREATE TABLE IF NOT EXISTS hospedagens_reservas (
+-- -- id SERIAL PRIMARY KEY,
+-- -- hospede VARCHAR(100) NOT NULL,
+-- -- tipo_acomodacao VARCHAR(50) NOT NULL,
+-- -- diarias INT NOT NULL,
+-- -- valor_diaria DECIMAL (10,2) NOT NULL,
+-- -- pensao_completa BOOLEAN DEFAULT TRUE,
+-- -- num_hospedes INT NOT NULL
+ -- );
+
+-- INSERT INTO hospedagens_reservas (hospede, tipo_acomodacao, diarias, valor_diaria, pensao_completa, num_hospedes) VALUES
+-- ('Familia Albuquerque', 'Chalé Alpino', 4, 620.00, TRUE, 4),
+-- ('Roberto Justus', 'Suíte Master Presidencial', 3, 1100.00, TRUE, 2),
+-- ('Tatiana Werneck', 'Bangalō das Flores', 2, 480.00, FALSE, 2),
+-- ('Marcelo Tas', 'Chalé Vista Verde', 5, 550.00, TRUE, 3),
+-- ('Sabrina Sato', 'Suite Master Presidencial', 7, 1100.00, TRUE, 3),
+-- ('Tiago Leifert', 'Bangalô das Flores', 3, 480.00, FALSE, 1);
+
+--Projeção simples  de colunas especificas 
+-- Select hospede,tipo_acomodacao  from hospedagens_reservas;
+
+-- Simulando aumento de 10% nos preços dos produtos 
+-- Select 
+--  hospede, 
+--   diarias AS "Diaria Atual",
+--   (diarias*valor_diaria) AS "Custo total das Diarias"
+--   From hospedagens_reservas;
+
+
+--  Select pensao_completa,diarias
+--  From hospedagens_reservas
+--  Where pensao_completa = 'true' AND diarias < 4;
+
+
+-- Select tipo_acomodacao,valor_diaria,diarias
+-- From hospedagens_reservas
+-- Order By valor_diaria desc
+-- limit 3;
